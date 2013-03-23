@@ -4,7 +4,7 @@ import static org.assertj.eclipse.assertions.util.StringConstants.NEWLINE;
 
 public interface PreferenceConstants
 {
-  String TEXT_GENERAL_SETTINGS = "General settings for Fest assertions (can be refined for each project):";
+  String TEXT_GENERAL_SETTINGS = "General settings for AssertJ assertions (can be refined for each project):";
   String USE_PROJECT_SPECIFIC_SETTINGS = "org.assertj.eclipse.assertions.useprojectsettings";
   String TEST_SOURCE_DIRECTORY = "org.assertj.eclipse.assertions.preferences.test_source_directory";
   String TEST_SOURCE_DIRECTORY_DEFAULT = "src/test/java";

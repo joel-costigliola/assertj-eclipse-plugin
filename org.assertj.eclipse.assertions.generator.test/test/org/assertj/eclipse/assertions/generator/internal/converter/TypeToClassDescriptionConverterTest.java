@@ -18,7 +18,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class TypeToClassDescriptionConverterTest extends SimpleProjectTestCase {
 
   @Mock
-  Logger logger;
+  Logger logger ;
   @InjectMocks
   TypeToClassDescriptionConverter converter;
 

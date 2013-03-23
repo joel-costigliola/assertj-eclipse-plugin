@@ -26,12 +26,12 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
  * 
  * @author Joel Costigliola
  */
-public class FestAssertionsPreferencePage extends PreferencePage implements IWorkbenchPreferencePage
+public class AssertJAssertionsPreferencePage extends PreferencePage implements IWorkbenchPreferencePage
 {
 
   private Text testSourceFolderField;
 
-  public FestAssertionsPreferencePage() {
+  public AssertJAssertionsPreferencePage() {
     setDescription(TEXT_GENERAL_SETTINGS);
   }
 

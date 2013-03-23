@@ -27,6 +27,7 @@ Bundle-ClassPath: .,
  lib/slf4j-api-1.7.2.jar,
  lib/xml-apis-1.0.b2.jar
 Bundle-Vendor: AssertJ
-Export-Package: org.assertj.eclipse.assertions.generator.internal.converter,
+Export-Package: org.assertj.assertions.generator.description,
+ org.assertj.eclipse.assertions.generator.internal.converter,
  org.assertj.eclipse.assertions.generator.internal.generation;x-friends:="org.assertj.eclipse.assertions.generator.test",
  org.assertj.eclipse.assertions.generator.internal.log;x-friends:="org.assertj.eclipse.assertions.generator.test"

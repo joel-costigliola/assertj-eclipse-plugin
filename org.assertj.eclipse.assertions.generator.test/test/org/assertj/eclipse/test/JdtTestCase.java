@@ -7,6 +7,7 @@ import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
@@ -50,6 +51,7 @@ public abstract class JdtTestCase {
 
   protected static ICompilationUnit getCompilationUnitInActiveEditor() {
     IFile file = getFileInActiveEditor();
+    IPath fullPath = file.getFullPath();
     return JavaCore.createCompilationUnitFrom(file);
   }
 

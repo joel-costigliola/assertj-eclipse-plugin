@@ -1,6 +1,6 @@
 package org.assertj.eclipse.assertions.properties;
 
-import static org.assertj.eclipse.assertions.preferences.FestAssertionsPreferencePage.createTestSourceFolderField;
+import static org.assertj.eclipse.assertions.preferences.AssertJAssertionsPreferencePage.createTestSourceFolderField;
 import static org.eclipse.swt.layout.GridData.FILL_HORIZONTAL;
 
 
@@ -27,7 +27,7 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 /**
  * @author Joel Costigliola
  */
-public class FestAssertionsPropertyPage extends PropertyPage {
+public class AssertJAssertionsPropertyPage extends PropertyPage {
 
   private Button projectSpecificSettingsCheckbox;
   private Text testSourceFolderField;

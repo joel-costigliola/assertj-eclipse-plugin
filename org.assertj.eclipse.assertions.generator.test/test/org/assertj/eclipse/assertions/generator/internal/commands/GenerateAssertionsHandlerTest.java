@@ -14,7 +14,7 @@ public class GenerateAssertionsHandlerTest extends SimpleProjectTestCase {
   private static final String GENERATE_ASSERTIONS = "org.assertj.eclipse.assertions.generator.commands.generateAssertions";
   private static final String NL = System.getProperty("line.separator");
 
-  private static final String thingSourceCode = "package pack.age;"
+  private static final String thingSourceCode = "package mypack.age;"
       + "public class Thing {"
       + "  public String getName() {"
       + "    return null;"
@@ -32,7 +32,7 @@ public class GenerateAssertionsHandlerTest extends SimpleProjectTestCase {
 
     // then
     assertThat(getCompilationUnitInActiveEditor().getElementName()).isEqualTo("ThingAssert.java");
-    assertThat(getCompilationUnitInActiveEditor().getParent().getElementName()).isEqualTo("pack.age");
+    assertThat(getCompilationUnitInActiveEditor().getParent().getElementName()).isEqualTo("mypack.age");
   }
 
   @Test
