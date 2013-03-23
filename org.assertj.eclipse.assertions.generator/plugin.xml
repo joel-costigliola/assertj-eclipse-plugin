@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+  <extension point="org.eclipse.ui.commands">
+    <command id="org.assertj.eclipse.assertions.generator.commands.generateAssertions"
+      name="Generate AssertJ Assertions"
+      defaultHandler="org.assertj.eclipse.assertions.generator.internal.commands.GenerateAssertionsHandler"
+      description="Generate AssertJ Assertions for the given selected item" />
+  </extension>
+
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution allPopups="true" locationURI="popup:org.eclipse.jdt.ui.source.menu">
+      <separator name="org.assertj.eclipse.assertions.generator.menu.generateAssertions.begin" visible="true" />
+      <command commandId="org.assertj.eclipse.assertions.generator.commands.generateAssertions" style="push">
+        <visibleWhen checkEnabled="false">
+          <or>
+            <with variable="activePartId">
+              <equals value="org.eclipse.jdt.ui.CompilationUnitEditor" />
+            </with>
+            <with variable="activeMenuSelection">
+              <iterate ifEmpty="false" operator="and">
+                <or>
+                  <!-- <adapt type="org.eclipse.jdt.core.IPackageFragment" /> -->
+                  <adapt type="org.eclipse.jdt.core.IType" />
+                  <adapt type="org.eclipse.jdt.core.ICompilationUnit" />
+                </or>
+              </iterate>
+            </with>
+          </or>
+        </visibleWhen>
+      </command>
+      <separator name="org.assertj.eclipse.assertions.generator.menu.generateAssertions.end" visible="true" />
+    </menuContribution>
+  </extension>
+  <extension
+        point="org.eclipse.ui.preferencePages">
+     <page
+           class="org.assertj.eclipse.assertions.preferences.AssertJAssertionsPreferencePage"
+           id="org.assertj.eclipse.assertionsPreferencePage"
+           name="AssertJ Assertions">
+     </page>
+  </extension>
+  <extension
+        point="org.eclipse.ui.propertyPages">
+     <page
+           class="org.assertj.eclipse.assertions.properties.AssertJAssertionsPropertyPage"
+           id="org.assertj.eclipse.assertions.properties"
+           name="AssertJ Assertions">
+        <enabledWhen>
+		     <adapt
+		        type="org.eclipse.core.resources.IProject">
+		        <and>
+		          <test
+		              property="org.eclipse.core.resources.projectNature"
+		              value="org.eclipse.jdt.core.javanature">
+		          </test>
+		          <instanceof
+		             value="org.eclipse.core.resources.IProject">
+		          </instanceof>
+		        </and>
+		      </adapt>
+        </enabledWhen>
+     </page>
+  </extension>
+
+</plugin>
